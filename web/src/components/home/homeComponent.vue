@@ -108,7 +108,7 @@
                     </Breadcrumb>
                     <!-- main -->
                     <Card>
-                        <div style="height: 600px">Content</div>
+                        <div style="height: 800px">Content</div>
                     </Card>
                 </Content>
             </Layout>

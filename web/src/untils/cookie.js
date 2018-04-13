@@ -16,8 +16,22 @@ export default{
     get:function (name) {
         var cookie = document.cookie;
         if(cookie.length == 0){
-            return ;
+            return '';
         }
         cookie = cookie.split('; ');
+        var res = '';
+        cookie.forEach(item => {
+            var arr = item.split('=');
+            if(arr[0] === name){
+                res = arr[1];
+            }            
+        });
+        return res;
+    },
+    remove:function (name) {
+        var now = new Date();
+        now.setDate(now.getDate() - 10);
+        // document.cookie = name + 'xxx;expires=' + now.toUTCString();
+        this.set(name, null, now);
     }
 }
